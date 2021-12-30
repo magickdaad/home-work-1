@@ -15,9 +15,9 @@ const App = () => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
-    if (email && password) {
+    if (email.trim() && password.trim()) {
       console.log({ email, password });
-      document.querySelector('.form').reset();
+      evt.target.reset();
       email = '';
       password = '';
     } else {
