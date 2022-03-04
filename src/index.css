@@ -1,147 +1,77 @@
+/*----Tutorial-5----*/
+
+* {
+  font-family: "Roboto";
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #e4edfa;
+  background-color: #FAFAFA;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+.wrapper {
+  width: 450px;
+  margin: 50px auto;
+  transform: scale(1.5) translateY(70px);
 }
 
-/* .profile-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
+.list {
+  max-height: 400px;
+  overflow: auto;
+  padding: 30px;
+  margin-bottom: 30px;
 }
 
-.profile {
-  padding: 25px 20px;
-  border: 10px solid #e1e1e1;
-  border-radius: 40px;
-  width: fit-content;
-  margin: 0 auto;
-} */
-
-.form {
-  display: flex;
-  flex-direction: column;
-  margin: 10px 0 0 15px;
-}
-
-.form__input,.form__btn{
-  width: fit-content;
-  font-size: 16px;
-  line-height: 20px;
-  padding: 10px;
-}
-
-.form__input{
-  margin-bottom: 15px;
-}
-
-
-/*=========================================================*/
-
-#root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.app-container {
-  max-width: 550px;
-  padding: 53px 50px;
-  background: #ffffff;
-  border: 1px solid #d6e1f1;
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.04);
-  border-radius: 30px;
-}
-
-.app-title {
-  padding-left: 62px;
-  margin-bottom: 34px;
-  font-weight: 800;
-  font-size: 32px;
-  line-height: 39px;
-  background-image: url('./img/title-bg.svg');
-  background-repeat: no-repeat;
-  background-size: 54px;
-  background-position: left center;
-}
-
-/* Acordeon styles */
-.tab {
-  position: relative;
-  margin-bottom: 18px;
-  padding-bottom: 18px;
-  width: 100%;
-  overflow: hidden;
-  border-bottom: 1px solid #f3f3f3;
-}
-
-.tab:last-child {
-  border-bottom: 0;
-}
-
-.tab input {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-.tab label {
-  position: relative;
-  display: block;
-  background: #fff;
-  cursor: pointer;
+.btn {
+  height: 45px;
+  padding: 0 30px;
+  border: 0;
+  border-radius: 10px;
+  margin-right: 15px;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
+  cursor: pointer;
+  transition: all 0.15s ease;
 }
-.blue label {
-  background: #2980b9;
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: none;
 }
-.tab-content {
-  max-height: 0;
-  overflow: hidden;
-  -webkit-transition: max-height 0.35s;
-  -o-transition: max-height 0.35s;
-  transition: max-height 0.35s;
+.btn_generate {
+  background-color: #00C8A4;
+  color: #fff;
+  box-shadow: 0 3px 0 #00A98B;
+  border: 1px solid #00A98B;
 }
-.tab-content p {
-  color: #6d6d6d;
-  padding: 14px 0 24px;
-  line-height: 22px;
-}
-/* :active */
-.tab.active .tab-content {
-  max-height: 100vh;
-}
-/* Icon */
-.tab label::after {
-  position: absolute;
-  content: '';
-  width: 16px;
-  height: 10px;
-  background-image: url('./img/arrow-tab.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 16px;
-  right: 0;
-  top: 0px;
-  display: block;
-  line-height: 3;
-  text-align: center;
-  -webkit-transition: all 0.35s;
-  -o-transition: all 0.35s;
-  transition: all 0.35s;
+.btn_clear {
+  background-color: #F08787;
+  box-shadow: 0 3px 0 #B05555;
+  border: 1px solid #B05555;
+  color: #fff;
 }
 
-.tab.active label::after {
-  transform: rotate(180deg);
+.block {
+  padding: 15px 30px;
+  background: #FFFFFF;
+  border: 1px solid #EBEBEB;
+  box-sizing: border-box;
+  box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.01), 0px 25px 40px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+.block h3 {
+  font-size: 18px;
+}
+
+.empty-block {
+  text-align: center;
+  padding: 30px;
+}
+.empty-block h2 {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+.empty-block p {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.5;
+  line-height: 22px;
 }
