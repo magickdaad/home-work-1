@@ -84,7 +84,16 @@ select {
 }
 
 body {
-  background-color: #fafafa;
+  background-color: rgba(0, 0, 0, 0.05);
+  max-width: 960px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .wrapper {
@@ -157,40 +166,42 @@ body {
 
 /*----Tutorial-6----*/
 
-.feedback{
+.feedback {
   max-width: 450px;
   margin: 50px auto 0;
 }
 
-.feedback__reviews{
+.feedback__reviews {
   margin-bottom: 30px;
 }
 
-.feedback__reviews,.feedback__form {
+.feedback__reviews,
+.feedback__form {
   padding: 25px;
 }
 
-.reviews__title, .form__title{
+.reviews__title,
+.form__title {
   margin-bottom: 40px;
 }
 
 .review {
   padding: 0 0 0 10px;
   display: flex;
-  
+
   position: relative;
 }
 
-.review:not(:last-child){
+.review:not(:last-child) {
   margin-bottom: 25px;
 }
 
-.review__avatar{
+.review__avatar {
   margin-right: 20px;
   align-self: center;
 }
 
-.review__content{
+.review__content {
   flex: 1 1 auto;
 }
 
@@ -201,6 +212,14 @@ body {
   transform: translate(0,-50%);
 } */
 
-.form__fild:not(:last-child){
+.form__fild:not(:last-child) {
   margin-bottom: 15px;
+}
+
+/*----Tutorial-7----*/
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
