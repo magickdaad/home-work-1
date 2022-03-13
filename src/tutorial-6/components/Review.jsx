@@ -7,7 +7,7 @@ const Review = ({ name, message, index }) => {
   const { deleteComment } = React.useContext(AppContext);
   return (
     <div className="review">
-      <Avatar className="review__avatar">{name[0]}</Avatar>
+      <Avatar className="review__avatar">A</Avatar>
       <div className="review__content">
         <h3 className="review__name">{name}</h3>
         <p className="review__text">{message}</p>

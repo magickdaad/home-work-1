@@ -5,11 +5,8 @@ import { AppContext } from './context';
 import { dateOptions } from './options';
 
 const App = () => {
-  const inputName = React.useRef();
-  const inputEmail = React.useRef();
-  const inputMessage = React.useRef();
-
   const [comments, setComments] = React.useState([]);
+  const [filds, setFilds] = React.useState({ name: '', email: '', message: '' });
   React.useEffect(() => {
     const rows = localStorage.getItem('comments') || [];
     setComments(JSON.parse(rows));
@@ -21,13 +18,15 @@ const App = () => {
     setComments(() => [
       ...comments,
       {
-        fullName: inputName.current.value,
-        email: inputEmail.current.value,
+        fullName: filds.name,
+        email: filds.email,
         createdAt: new Date().toString().split(' GMT')[0],
-        text: inputMessage.current.value,
+        text: filds.message,
       },
     ]);
-    evt.target.reset();
+    console.log(filds);
+    setFilds({ name: '', email: '', message: '' });
+    console.log(comments);
   };
 
   const deleteComment = (index) => {
@@ -52,21 +51,24 @@ const App = () => {
         <h2 className="form__title">Обратная связь:</h2>
         <form onSubmit={handleClickButton}>
           <TextField
-            inputRef={inputName}
+            onChange={(evt) => setFilds({ ...filds, name: evt.target.value })}
+            value={filds.name}
             className="form__fild"
             fullWidth
             name="name"
             label="Имя"
           />
           <TextField
-            inputRef={inputEmail}
+            onChange={(evt) => setFilds({ ...filds, email: evt.target.value })}
+            value={filds.email}
             className="form__fild"
             fullWidth
             name="email"
             label="Почта"
           />
           <TextField
-            inputRef={inputMessage}
+            onChange={(evt) => setFilds({ ...filds, message: evt.target.value })}
+            value={filds.message}
             className="form__fild"
             fullWidth
             name="message"
