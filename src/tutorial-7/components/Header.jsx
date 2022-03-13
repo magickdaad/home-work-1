@@ -1,9 +1,29 @@
 import React from 'react';
-import { Nav } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom';
+import { Button, Nav } from 'react-bootstrap';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 export const Header = () => {
+  const [isAuth, setIsAuth] = React.useState(false);
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (window.localStorage.getItem('token')) {
+      setIsAuth(true);
+    } else {
+      setIsAuth(false);
+    }
+  }, [pathname]);
+
+  const handleClickAuth = () => {
+    if (isAuth && window.confirm('Вы действительно хотите выйти')) {
+      window.localStorage.removeItem('token');
+      navigate('/');
+      setIsAuth(false);
+    } else {
+      navigate('/login');
+    }
+  };
   return (
     <div className="header">
       <Link to="/">
@@ -21,11 +41,9 @@ export const Header = () => {
             Обо мне
           </Nav.Link>
         </Nav.Item>
-        <Nav.Item>
-          <Nav.Link active={pathname === '/login'} to="/login" as={Link}>
-            Войти
-          </Nav.Link>
-        </Nav.Item>
+        <Button onClick={handleClickAuth} variant={isAuth ? 'danger' : 'dark'}>
+          {isAuth ? 'Выйти' : 'Войти'}
+        </Button>
       </Nav>
     </div>
   );

@@ -223,3 +223,14 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.text,
+.btn {
+  width: 45%;
+}
